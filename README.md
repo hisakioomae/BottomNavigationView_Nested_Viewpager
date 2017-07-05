@@ -1,5 +1,5 @@
 ・keyword
-  BottomNavigationView
-  Viewpager
+  BottomNavigationView\n
+  Viewpager\n
   Tablayout
   Nested
