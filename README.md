@@ -1,5 +1,2 @@
-・keyword
-  BottomNavigationView
-  Viewpager
-  Tablayout
-  Nested
+・Please Read this site. This site has description this github source code in Japanese. I can't write English well. sorry...
+http://qiita.com/iKASiH/items/ce63d5fefdc619f2f1c3
