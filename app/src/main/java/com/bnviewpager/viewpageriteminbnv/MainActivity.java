@@ -30,9 +30,6 @@ public class MainActivity extends AppCompatActivity {
                     case 2:
                         replaceFragment(ViewPagerFragment.newInstance());
                         break;
-                    case 3:
-                        replaceFragment(ViewPagerFragment.newInstance());
-                        break;
                 }
             }
             @Override
