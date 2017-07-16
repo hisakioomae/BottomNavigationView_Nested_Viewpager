@@ -8,9 +8,6 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
-    public static final String FRAGMENT_VIEWPAGER = "FRAGMENT_VIEWPAGER";
-    public static final String FRAGMENT_FIRST = "FRAGMENT_FIRST";
-    public static final String FRAGMENT_SECOND = "FRAGMENT_SECOND";
 
     private BottomNavigation BottomNavigationView;
 
@@ -25,32 +22,35 @@ public class MainActivity extends AppCompatActivity {
             public void onMenuItemSelect(@IdRes int i, int i1, boolean b) {
                 switch (i1) {
                     case 0:
-                        replaceFragment(FirstFragment.newInstance(),FRAGMENT_FIRST);
+                        replaceFragment(FirstFragment.newInstance());
                         break;
                     case 1:
-                        replaceFragment(SecondFragment.newInstance(),FRAGMENT_SECOND);
+                        replaceFragment(SecondFragment.newInstance());
                         break;
                     case 2:
-                        replaceFragment(ViewPagerFragment.newInstance(),FRAGMENT_VIEWPAGER);
+                        replaceFragment(ViewPagerFragment.newInstance());
                         break;
                     case 3:
-                        replaceFragment(ViewPagerFragment.newInstance(),FRAGMENT_VIEWPAGER);
+                        replaceFragment(ViewPagerFragment.newInstance());
                         break;
                 }
             }
-
             @Override
             public void onMenuItemReselect(@IdRes int i, int i1, boolean b) {
-
             }
         });
 
-        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        ft.add(R.id.fragment_container, FirstFragment.newInstance(), FRAGMENT_FIRST).commit();//最初はadd
+        addFragment(FirstFragment.newInstance());
+
     }
 
-    private void replaceFragment(Fragment newFragment, String tag) {
+    private void addFragment(Fragment newFragment){
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        ft.replace(R.id.fragment_container, newFragment, tag).commit();
+        ft.add(R.id.fragment_container, newFragment).commit();
+    }
+
+    private void replaceFragment(Fragment newFragment) {
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.fragment_container, newFragment).commit();
     }
 }
